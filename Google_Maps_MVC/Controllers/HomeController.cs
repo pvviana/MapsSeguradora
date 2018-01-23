@@ -15,7 +15,8 @@ namespace Google_Maps_MVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            string markers = "[";
+               
+            /*string markers = "[";
             string conString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlCommand cmd = new SqlCommand("select * from db_entrevista..TB_ENTREVISTA where vr_lat is not null and vr_lng is not null and vr_lat <> '' and vr_lng <> '' and vr_latfim <> '' and vr_lngfim <> ''");
             using (SqlConnection con = new SqlConnection(conString))
@@ -39,7 +40,7 @@ namespace Google_Maps_MVC.Controllers
 
             markers = markers.Remove(markers.Length - 1);
             markers += "];";
-            ViewBag.Markers = markers;
+            ViewBag.Markers = markers;*/
             return View();
         }
     }
