@@ -44,6 +44,7 @@
             width: 300px;
             top: 1rem !important;
             left: 3.5rem !important;
+            z-index:90;
         }
 
             #pac-input:focus {
@@ -94,13 +95,14 @@
             margin-top: 1.25rem;
             margin-left: 0.9rem;
         }
-        #divnav {
+        nav {
             overflow: hidden;
-            z-index: 100;
+            z-index: 95;
             position: absolute;
             margin-top: 1.25rem;
             margin-left: 0.9rem;
-            width: 100%;
+            /*width: 100%;*/
+            width:auto !important;
         }
 
         #sidenav-overlay {
@@ -120,6 +122,9 @@
             .breadcrumb:before {
                 color: dodgerblue !important;
             }
+            li>a>i {
+                margin: 0 !important;
+            }
     </style>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -130,31 +135,40 @@
     <div id="container">
         <div id="menu">
             <ul id="slide-out" class="side-nav">
-                <li>
+                <li class="blue darken-4">
                     <div class="user-view">
-                        <div class="background">
-                            <img src="images/office.jpg">
+                        <div class="background" style="z-index: 0;">
+                            <img src="~/images/portal_vital.png" style="max-width:  260px;margin: 10px 15px 15px;">
                         </div>
-                        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-                        <a href="#!name"><span class="white-text name">John Doe</span></a>
-                        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                        <a style="visibility:hidden;" href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+                        <a href="#!name"><i class="material-icons left">account_circle</i><span class="white-text name" style="margin-top:0">Marcelo Cardoso</span></a>
+                        <a href="#!email"><i class="material-icons left">email</i><span class="white-text email">mcardoso@sinaf.com.br</span></a>
                     </div>
                 </li>
-                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                <li><a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a></li>
-                <li><a href="#!">Second Link</a></li>
-                <li><div class="divider"></div></li>
-                <li><a class="subheader">Subheader</a></li>
-                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                <li><a class="subheader">Filtros</a></li>
+                <li><a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown1'>Todas as Unidades<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown2'>Todas as Equipes<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><div class="divider" style="margin: 50px 0 0 0 ;"></div></li>
+                <!--<li><a class="subheader">Subheader</a></li>-->
+                <li><a class="waves-effect" href="#!">Configurações</a></li>
+                <li><a class="waves-effect" href="#!">Sair</a></li>
             </ul>
             <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
+            <ul id='dropdown1' class='dropdown-content' style="margin: 10px 15px;">
+                <li><a href="#!">Baixada</a></li>
+                <li><a href="#!">Grande Niterói</a></li>
+                <li><a href="#!">Zona Norte</a></li>
+                <li><a href="#!">Zona Oeste</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">three</a></li>
-                <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                <li><a href="#!">Todas as Unidades</a></li>
+            </ul>
+            <ul id='dropdown2' class='dropdown-content' style="margin: 10px 15px;">
+                <li><a href="#!">Equipe Garra</a></li>
+                <li><a href="#!">Equipe Raça</a></li>
+                <li><a href="#!">Equipe Tropa de Elite</a></li>
+                <li><a href="#!">Equipe Ousadia</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Todas as Equipes</a></li>
             </ul>
             <a href="#" style="" data-activates="slide-out" class="btn-floating waves-effect waves-light blue"><i class="material-icons">menu</i></a>
         </div>
@@ -179,8 +193,8 @@
         function initMap() {
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 3,
-                center: { lat: -28.024, lng: 140.887 },
+                zoom: 11,
+                center: { lat: -22.896220, lng: -43.300552 },
                 mapTypeId: 'roadmap'
             });
 
@@ -354,6 +368,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script type="text/javascript">
             $(".btn-floating").sideNav();
+   
 
         </script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
