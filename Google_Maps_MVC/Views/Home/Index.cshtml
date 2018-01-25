@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <meta charset="utf-8">
     <title>Marker Clustering</title>
     <!--Import Google Icon Font-->
@@ -125,6 +125,32 @@
             li>a>i {
                 margin: 0 !important;
             }
+        .user-view {
+            box-shadow: 0 0 20px 5px #080a066e inset;
+        }
+        li .divider{
+            margin:0 !important;
+        }
+        .margin-options {
+            margin: 0 20px 0 0 !important;
+        }
+        /*.select-dropdown{
+            padding: 0px 32px !important;
+        }*/
+        .input-field {
+            padding: 0 32px;
+        }
+        .select-wrapper input.select-dropdown{
+            border-bottom: none !important;
+        }
+        #info-colab > a {
+            display: inline-flex;
+            width: 100%;
+            line-height: 0px;
+        }
+        .side-nav li{
+            line-height: 20px !important;
+        }
     </style>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -140,36 +166,63 @@
                         <div class="background" style="z-index: 0;">
                             <img src="~/images/portal_vital.png" style="max-width:  260px;margin: 10px 15px 15px;">
                         </div>
-                        <a style="visibility:hidden;" href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-                        <a href="#!name"><i class="material-icons left">account_circle</i><span class="white-text name" style="margin-top:0">Marcelo Cardoso</span></a>
-                        <a href="#!email"><i class="material-icons left">email</i><span class="white-text email">mcardoso@sinaf.com.br</span></a>
+                        <div id="info-colab">
+                            <a style="visibility:hidden;" href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+                            <a href="#!name"><i class="material-icons left">account_circle</i><span class="white-text name" style="margin-top:0">Marcelo Cardoso</span></a>
+                            <a href="#!email"><i class="material-icons left">email</i><span class="white-text email">mcardoso@sinaf.com.br</span></a>
+                        </div>
                     </div>
                 </li>
                 <li><a class="subheader">Filtros</a></li>
-                <li><a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown1'>Todas as Unidades<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown2'>Todas as Equipes<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><div class="divider" style="margin: 50px 0 0 0 ;"></div></li>
+                <li>
+                    <div class="input-field">
+                        <select>
+                            <option value="0" selected>Todas as Unidades</option>
+                            <option value="1">Baixada</option>
+                            <option value="4">Grande Niterói</option>
+                            <option value="2">Zona Norte</option>
+                            <option value="3">Zona Oeste</option>
+                        </select>
+                    </div>
+                <!--<a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown1'>Todas as Unidades<i class="material-icons right">arrow_drop_down</i></a>-->
+                </li>
+                <li>
+                    <div class="input-field">
+                        <select>
+                            <option value="0" selected>Todas as Equipes</option>
+                            <option value="1">Equipe Garra</option>
+                            <option value="4">Equipe Raça</option>
+                            <option value="2">Equipe Tropa de Elite</option>
+                            <option value="3">Equipe Ousadia</option>
+                        </select>
+                    </div>
+                    <!--<a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown1'>Todas as Unidades<i class="material-icons right">arrow_drop_down</i></a>-->
+                </li>
+                <!--<li><a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown2'>Todas as Equipes<i class="material-icons right">arrow_drop_down</i></a></li>-->
+                <li><div class="divider" style="margin: 50px 0 0 0 !important;"></div></li>
                 <!--<li><a class="subheader">Subheader</a></li>-->
-                <li><a class="waves-effect" href="#!">Configurações</a></li>
-                <li><a class="waves-effect" href="#!">Sair</a></li>
+                <li><a class="waves-effect" href="#!"><i class="material-icons left margin-options">settings</i>Configurações</a></li>
+                <li><a class="waves-effect" href="#!"><i class="material-icons left margin-options">exit_to_app</i>Sair</a></li>
             </ul>
             <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content' style="margin: 10px 15px;">
+           <!-- <ul id='dropdown1' class='dropdown-content' style="margin: 10px 15px;">
+               
+                <li></li>
+                 <li><a href="#!">Todas as Unidades</a></li>
+                <li class="divider"></li>
                 <li><a href="#!">Baixada</a></li>
                 <li><a href="#!">Grande Niterói</a></li>
                 <li><a href="#!">Zona Norte</a></li>
-                <li><a href="#!">Zona Oeste</a></li>
+                <li><a href="#!">Zona Oeste</a></li>              
+            </ul>-->  
+            <!--<ul id='dropdown2' class='dropdown-content' style="margin: 10px 15px;">
+                <li><a href="#!">Todas as Equipes</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Todas as Unidades</a></li>
-            </ul>
-            <ul id='dropdown2' class='dropdown-content' style="margin: 10px 15px;">
                 <li><a href="#!">Equipe Garra</a></li>
                 <li><a href="#!">Equipe Raça</a></li>
                 <li><a href="#!">Equipe Tropa de Elite</a></li>
-                <li><a href="#!">Equipe Ousadia</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Todas as Equipes</a></li>
-            </ul>
+                <li><a href="#!">Equipe Ousadia</a></li>              
+            </ul>-->
             <a href="#" style="" data-activates="slide-out" class="btn-floating waves-effect waves-light blue"><i class="material-icons">menu</i></a>
         </div>
         <div id="divnav">
@@ -368,7 +421,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script type="text/javascript">
             $(".btn-floating").sideNav();
-   
+            $('select').material_select();
 
         </script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
